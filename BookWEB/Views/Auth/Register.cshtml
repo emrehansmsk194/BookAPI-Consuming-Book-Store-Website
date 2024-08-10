@@ -1,0 +1,40 @@
+﻿@model BookWEB.Models.DTO.RegisterationRequestDTO
+<html>
+<head>
+	<script src="~/js/color-modes.js"></script>
+	<link href="~/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="~/css/Register.css" rel="stylesheet" />
+</head>
+<body class="text-center">
+	
+	<div class="modal-body p-5 mt-5 w-50">
+		<form  method="post" class="mt-5 ">
+			<h2 class="text-center">Register</h2>
+			<div class="form-floating mb-3">
+				<input type="email" class="form-control rounded-3" asp-for="UserName" placeholder="name@example.com">
+				<label asp-for="UserName">Email address</label>
+				<span asp-validation-for="UserName" class="text-danger"></span>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="text" class="form-control rounded-3" asp-for="Name">
+				<label asp-for="Name">Name</label>
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<div class="form-floating mb-3">
+				<input type="password" class="form-control rounded-3" asp-for="Password" placeholder="Enter your password">
+				<label asp-for="Password">Password</label>
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+		</form>
+	</div>
+	<script src="~/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+
+}

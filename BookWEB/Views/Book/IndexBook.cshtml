@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BookWEB.Models.DTO.BookDTO> 
+
+
+<div class="text-end pt-5" id="AddingButton">
+	<a class="btn btn-outline-primary" asp-action="CreateBook" asp-controller="Book"><i class="bi bi-plus-square-fill"></i>Add New Book</a>
+</div>
+
+<div class = "container-fluid pt-5">
+	<table class="table table-primary table-striped">
+		<thead>
+			<tr>
+				<th scope="col" class="text-dark">Book Title</th>
+				<th scope="col" class="text-dark">Price</th>
+				<th scope="col" class="text-dark">Page Count</th>
+				<th scope="col" class="text-dark">Image</th>
+				<th scope="col" class="text-dark">Category</th>
+				<th scope="col" class="text-dark">Language</th>
+				<th scope="col" class="text-dark"></th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in Model)
+			{
+				<tr>
+					<td scope="col" class="text-dark">@item.Name</td>
+					<td scope="col" class="text-dark">$@item.Price.ToString()</td>
+					<td scope="col" class="text-dark">@item.PageCount</td>
+					<td scope="col" class="text-dark"><img src="@item.CoverImageUrl" alt="Image" width ="200px" height="200px"/></td>
+					<td scope="col" class="text-dark">@item.CategoryName</td>
+					<td scope="col" class="text-dar">@item.Language</td>
+					<td scope="col" class="text-dark">
+						<a class="btn btn-success" asp-controller="Book" asp-action="UpdateBook" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
+						<a class="btn btn-danger"><i class="bi bi-archive-fill"></i></a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

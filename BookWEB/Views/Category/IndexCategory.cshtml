@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BookWEB.Models.DTO.CategoryDTO>
+
+<div container="mt-5">
+	@foreach(var category in Model){
+	<p class="lead text-dark text-center">@category.Name</p>
+	<p class="lead text-dark text-center">@category.Id</p>
+	}
+</div>

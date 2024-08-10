@@ -1,0 +1,16 @@
+﻿.custom-form {
+   margin-top: 100px;
+    padding-left: 350px;
+}
+.container {
+    margin-top: 100px;
+}
+
+.section-custom {
+    width: 450px;
+    height: 390px;
+}
+form {
+    border:1px solid whitesmoke;
+    background-color: whitesmoke;
+}

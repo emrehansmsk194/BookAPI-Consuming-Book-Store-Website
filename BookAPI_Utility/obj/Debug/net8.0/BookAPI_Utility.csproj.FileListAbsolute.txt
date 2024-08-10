@@ -1,0 +1,11 @@
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\bin\Debug\net8.0\BookAPI_Utility.deps.json
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\bin\Debug\net8.0\BookAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\bin\Debug\net8.0\BookAPI_Utility.pdb
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.AssemblyInfoInputs.cache
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.AssemblyInfo.cs
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.csproj.CoreCompileInputs.cache
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\refint\BookAPI_Utility.dll
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\BookAPI_Utility.pdb
+C:\Users\EMREHAN\source\repos\BookAPI\BookAPI_Utility\obj\Debug\net8.0\ref\BookAPI_Utility.dll

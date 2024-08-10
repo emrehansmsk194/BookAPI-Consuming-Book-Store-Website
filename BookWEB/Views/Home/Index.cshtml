@@ -1,0 +1,92 @@
+﻿@model IEnumerable<BookWEB.Models.DTO.BookDTO>
+<link href="~/css/section.css" rel="stylesheet" />
+
+
+
+   <header>
+        <div id="carouselExampleAutoplaying" class="carousel slide mt-5 pt-5"  data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.qnbfinansbank.enpara.com/images/default-source/kampanyalar/22_qnb-enpara-kampanyalar-online-kitap-indirim68fef73c133048f39c706bb9800e66a0.jpg?sfvrsn=7389472f_1" class="d-block w-100 carousel-image" alt="image">
+                </div>
+                <div class="carousel-item">
+                <img src="https://i.dr.com.tr/pimages/Content/Uploads/LandingPage/2023-LP/dr/indirimli-kitaplar/mart/img2.png" class="d-block w-100 carousel-image" alt="image">
+                </div>
+                <div class="carousel-item">
+                <img src="https://kalemkahveklavye.com/wp-content/uploads/2023/04/Can-yayinlari-yeni-kitaplar-Nisan-2023.jpg" class="d-block w-100 carousel-image" alt="image">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+</header>
+<div class ="container-fluid pt-5 border p-3">
+ 
+    <form method="post" class="px-5" asp-controller="Home" asp-action="IndexPost">
+        <h5 class="text-primary">Search your Product.</h5>
+        <div class="input-group">
+            <input type="text" class="input-text bg-light" name="search" value="@ViewData["search"]" />
+            <button class="btn btn-primary " type="submit"> <i class="bi bi-search"></i></button>
+        </div>
+    </form>
+  
+</div>
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col mt-7">
+                    <div class="card bg-white custom-card" style="width:18rem; ">
+                        <img src="@item.CoverImageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark text-center">@item.Name</h5>
+                            <p class ="lead card-text text-dark text-center pt-5">Language : @item.Language</p>
+                            <p class="lead card-text text-dark text-center">PageCount : @item.PageCount</p>
+                            <p class="lead card-text text-primary text-center">@item.PublisherName</p>
+                            <span class=" lead  text-center text-danger fw-bold" >Price: $@item.Price.ToString()</span>
+                            <a href="#" class="btn btn-primary" onclick="addToCart(@item.Id)">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function addToCart(bookId) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AddToCart", "Cart")',
+            data: JSON.stringify(bookId),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                console.log("Response:", response);
+                if (response.success) {
+                    let cartCount = parseInt($("#cartCount").text());
+                    $("#cartCount").text(cartCount + 1);
+
+             
+                    window.location.reload();  // Sayfa yenileme
+                    // window.location.href = '@Url.Action("IndexCart", "Cart")';  
+                } else {
+                    console.error("Add to cart failed:", response);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Add to cart error:", xhr.responseText);
+            }
+        });
+    }
+</script>
