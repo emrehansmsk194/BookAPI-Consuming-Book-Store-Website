@@ -58,7 +58,6 @@ Technologies used include AutoMapper, DTOs, Repository Pattern, Entity Framework
   - `Controllers/`: Contains the API controllers for managing books, categories, and publishers.
   - `Models/`: Contains the data models and DTOs used by the API.
   - `Repository/`: Implements the repository pattern for data access.
-  - `Services/`: Contains services for authentication and other business logic.
   - `Migrations/`: Contains the EF Core migrations for database management.
 
 - **BookWEB**: 
@@ -85,17 +84,17 @@ Technologies used include AutoMapper, DTOs, Repository Pattern, Entity Framework
 ### Endpoints
 
 - **Books**
-  - `GET /api/books`: Get all books with optional search and pagination.
-  - `GET /api/books/{id}`: Get a specific book by ID.
-  - `POST /api/books`: Create a new book (admin only).
-  - `PUT /api/books/{id}`: Update an existing book (admin only).
-  - `DELETE /api/books/{id}`: Delete a book (admin only).
-  - `GET /api/books/category={categoryId}`: Get books by category.
-  - `GET /api/books/publisher={publisherId}`: Get books by publisher.
+  - `GET /api/API`: Get all books with optional search and pagination.
+  - `GET /api/API/{id}`: Get a specific book by ID.
+  - `POST /api/API`: Create a new book (admin only).
+  - `PUT /api/API/{id}`: Update an existing book (admin only).
+  - `DELETE /api/API/{id}`: Delete a book (admin only).
+  - `GET /api/API/category={categoryId}`: Get books by category.
+  - `GET /api/API/publisher={publisherId}`: Get books by publisher.
 
 - **Authentication**
-  - `POST /api/users/login`: User login.
-  - `POST /api/users/register`: User registration.
+  - `POST /api/Users/login`: User login.
+  - `POST /api/Users/register`: User registration.
 
 ## Contributing
 
